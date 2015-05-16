@@ -1,21 +1,14 @@
 function diff(arr1, arr2) {
-  var newArr = [];
-  var greater = [];
-  var least = [];
-  if(arr1.length > arr2.length) {
-    greater = arr1;
-    least = arr2;
-  } else {
-     greater = arr2;
-   least = arr1;
-  }
- console.log( least, greater)
-for (var i = 0; i < greater.length; i++) {
-  if(least.indexOf(greater[i]) < 0) {
-    newArr += greater[i];
-  }
+var newArr = [];  
+for(i=0;i<arr1.length;i++) {
+  if(arr2.indexOf(arr1[i]) === -1) {
+  newArr.push(arr1[i]);
+}  
 }
-  return newArr;
+for(i=0;i<arr2.length;i++) {
+  if(arr1.indexOf(arr2[i]) === -1) {
+  newArr.push(arr2[i]);}
 }
+ return newArr; }
 
 diff([1, 2, 3, 5], [1, 2, 3, 4, 5]);
